@@ -7,7 +7,7 @@ print(account.owner)  # Публічний атрибут доступний
 
 account.deposit(500)
 account.withdraw(300)
-print("Поточний баланс:", account.get_balance())
+print("Поточний баланс:", account.get_balance)  
 
 # Примусове звернення до приватного атрибута (небажано)
 print("Прямий доступ:", account._BankAccount__balance)  # Можливий, але не рекомендований підхід
