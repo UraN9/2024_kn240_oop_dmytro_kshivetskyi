@@ -1,5 +1,13 @@
-FROM alpine:latest
+FROM python:3.12-slim
 
-RUN apk add --no-cache python3 py3-pip
+WORKDIR /app
 
-CMD ["echo", "Hello"]
+# Встановлюємо потрібні пакети
+RUN pip install --no-cache-dir flask redis psycopg2-binary
+
+# Копіюємо код додатку в контейнер
+COPY ./src/web_app /app
+
+EXPOSE 5000
+
+CMD ["flask", "run", "--host=0.0.0.0"]
