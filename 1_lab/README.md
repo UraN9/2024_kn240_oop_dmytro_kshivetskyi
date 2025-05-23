@@ -34,5 +34,3 @@ pipenv install
 
 pipenv run python 1.py
 pipenv run flake8 .
-
-Тестовий  коміт
